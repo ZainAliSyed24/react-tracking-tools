@@ -2,8 +2,235 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
+import Card from '@/components/card/Card'
 
 const inter = Inter({ subsets: ['latin'] })
+
+
+const CARDS = [
+  {
+    title: 'Plausible:',
+    description: [
+      {
+        title: 'Prices:',
+        description: 'Starts at $9/month for up to 10k pageviews/month; 30-day free trial available.'
+      },
+      {
+        title: 'Open source:',
+        description: 'Yes.'
+      },
+      {
+        title: 'Compliance with user data collecting laws:',
+        description: 'GDPR, CCPA, and PECR compliant.'
+      },
+      {
+        title: 'Features provided:',
+        description: 'Offers basic features for web analytics such as page views, unique visitors, bounce rates, etc.'
+      },
+      {
+        title: 'Possibility to track user events:',
+        description: 'Yes.'
+      },
+      {
+        title: 'Good/bad docs:',
+        description: 'Good documentation.'
+      },
+      {
+        title: 'Reviews from the community:',
+        description: 'Positive reviews for its ease of use and simplicity.'
+      },
+      {
+        title: 'Supporting React Native:',
+        description: 'Yes, has a React Native library available for tracking mobile app usage.'
+      },
+    ]
+  },
+  {
+    title: 'PostHog:',
+    description: [
+      {
+        title: 'Prices:',
+        description: 'Prices: Free and open source (Free up to first 1 million events/mo, then $0.00045/event).'
+      },
+      {
+        title: 'Open source:',
+        description: 'Yes.'
+      },
+      {
+        title: 'Compliance with user data collecting laws:',
+        description: 'GDPR compliant.'
+      },
+      {
+        title: 'Features provided:',
+        description: 'Offers advanced features like event tracking, funnels, user retention, and cohort analysis.'
+      },
+      {
+        title: 'Possibility to track user events:',
+        description: 'Yes.'
+      },
+      {
+        title: 'Good/bad docs:',
+        description: 'Provides detailed documentation.'
+      },
+      {
+        title: 'Reviews from the community:',
+        description: 'Positive reviews for its powerful analytics capabilities and flexible APIs.'
+      },
+      {
+        title: 'Supporting React Native:',
+        description: 'Yes, has a React Native library available for tracking mobile app usage.'
+      },
+    ]
+  },
+  {
+    title: 'Matomo:',
+    description: [
+      {
+        title: 'Prices:',
+        description: 'Both free and paid versions are available.'
+      },
+      {
+        title: 'Open source:',
+        description: 'Yes.'
+      },
+      {
+        title: 'Compliance with user data collecting laws:',
+        description: 'GDPR compliant.'
+      },
+      {
+        title: 'Features provided:',
+        description: 'Offers advanced features like heatmaps, A/B testing, and real-time visitor tracking.'
+      },
+      {
+        title: 'Possibility to track user events:',
+        description: 'Yes.'
+      },
+      {
+        title: 'Good/bad docs:',
+        description: 'Comprehensive documentation.'
+      },
+      {
+        title: 'Reviews from the community:',
+        description: 'Positive reviews for its customization options and data privacy.'
+      },
+      {
+        title: 'Supporting React Native:',
+        description: 'Yes, has a React Native library available for tracking mobile app usage.'
+      },
+    ]
+  },
+  {
+    title: 'OWA (Open Web Analytics):',
+    description: [
+      {
+        title: 'Prices:',
+        description: 'Free and open source.'
+      },
+      {
+        title: 'Open source:',
+        description: 'Yes.'
+      },
+      {
+        title: 'Compliance with user data collecting laws:',
+        description: 'GDPR compliant.'
+      },
+      {
+        title: 'Features provided:',
+        description: 'Offers basic web analytics features such as page views, unique visitors, and referral sources.'
+      },
+      {
+        title: 'Possibility to track user events:',
+        description: 'Yes.'
+      },
+      {
+        title: 'Good/bad docs:',
+        description: 'Provides adequate documentation'
+      },
+      {
+        title: 'Reviews from the community:',
+        description: 'Mixed reviews for its user interface and limited reporting capabilities.'
+      },
+      {
+        title: 'Supporting React Native:',
+        description: 'No, does not have a React Native library available for tracking mobile app usage.'
+      },
+    ]
+  },
+  {
+    title: 'Google Analytics:',
+    description: [
+      {
+        title: 'Prices:',
+        description: 'Free for basic usage, paid versions are available for more advanced features.'
+      },
+      {
+        title: 'Open source:',
+        description: 'No.'
+      },
+      {
+        title: 'Compliance with user data collecting laws:',
+        description: 'Compliant with GDPR and CCPA.'
+      },
+      {
+        title: 'Features provided:',
+        description: 'Offers a comprehensive set of features for web analytics including real-time tracking, audience segmentation, and conversion tracking.'
+      },
+      {
+        title: 'Possibility to track user events:',
+        description: 'Yes.'
+      },
+      {
+        title: 'Good/bad docs:',
+        description: 'Offers extensive documentation and support.'
+      },
+      {
+        title: 'Reviews from the community:',
+        description: 'Mixed reviews for its privacy practices and data sharing policies.'
+      },
+      {
+        title: 'Supporting React Native:',
+        description: 'Yes, has a React Native library available for tracking mobile app usage.'
+      },
+    ]
+  },
+  {
+    title: 'Sentry:',
+    description: [
+      {
+        title: 'Prices:',
+        description: 'Both free and paid versions are available.(From $26/mo)'
+      },
+      {
+        title: 'Open source:',
+        description: 'No, but has an open-core model.'
+      },
+      {
+        title: 'Compliance with user data collecting laws:',
+        description: 'Compliant with GDPR and CCPA.'
+      },
+      {
+        title: 'Features provided:',
+        description: 'Not specifically designed for web analytics but provides error tracking for web applications.'
+      },
+      {
+        title: 'Possibility to track user events:',
+        description: 'Yes, for tracking errors.'
+      },
+      {
+        title: 'Good/bad docs:',
+        description: 'Provides adequate documentation'
+      },
+      {
+        title: 'Reviews from the community:',
+        description: 'Positive reviews for its comprehensive error tracking capabilities.'
+      },
+      {
+        title: 'Supporting React Native:',
+        description: 'Yes, has a React Native library available for tracking mobile app usage.'
+      },
+    ]
+  },
+]
 
 export default function Home() {
   return (
@@ -15,108 +242,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>src/pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
+        {CARDS.map((card, index) => (
+          <Card key={index} title={card.title} description={card.description} />
+        ))}
       </main>
     </>
   )
