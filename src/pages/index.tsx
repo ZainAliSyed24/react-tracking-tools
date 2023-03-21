@@ -202,7 +202,7 @@ const CARDS = [
       },
       {
         title: 'Open source:',
-        description: 'No, but has an open-core model.'
+        description: 'Yes.'
       },
       {
         title: 'Compliance with user data collecting laws:',
