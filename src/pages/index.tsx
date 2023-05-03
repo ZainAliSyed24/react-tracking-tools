@@ -157,23 +157,23 @@ const CARDS = [
     ]
   },
   {
-    title: 'Matomo:',
+    title: 'Amplitude:',
     description: [
       {
         title: 'Prices:',
-        description: 'Both free and paid versions are available.'
+        description: 'Free plan available for up to 10 million events per month, paid plans start at $995 per year.  Free plan available, paid plans offer a 30-day free trial.'
       },
       {
         title: 'Open source:',
-        description: 'Yes.'
+        description: 'Not open source..'
       },
       {
         title: 'Compliance with user data collecting laws:',
-        description: 'GDPR compliant.'
+        description: 'Amplitude is GDPR and CCPA compliant'
       },
       {
         title: 'Features provided:',
-        description: 'Offers advanced features like heatmaps, A/B testing, and real-time visitor tracking.'
+        description: ' Behavioral analytics, cohort analysis, user segmentation, event tracking, A/B testing, retention analysis, and more.'
       },
       {
         title: 'Possibility to track user events:',
@@ -181,15 +181,15 @@ const CARDS = [
       },
       {
         title: 'Good/bad docs:',
-        description: 'Comprehensive documentation.'
+        description: 'Good documentation, extensive API documentation and SDKs available'
       },
       {
         title: 'Reviews from the community:',
-        description: 'Positive reviews for its customization options and data privacy.'
+        description: 'Generally positive reviews, Amplitude has support for React Native.'
       },
       {
         title: 'Supporting React Native:',
-        description: 'Yes, has a React Native library available for tracking mobile app usage.'
+        description: 'Amplitude has support for React Native.'
       },
     ]
   }
